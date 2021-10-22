@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Hero</title>
+</head>
+<body>
+    <H1>This Hero Has Been Removed</H1>
+    <ul>
+        <h4>Superhero Name  - {{list_hero.name}}</h4>
+        <h4>Superhero alter ego - {{list_hero.alter_ego}}</h4>
+        <h4>Superhero Primary Ability  - {{list_hero.primary_ability}}</h4>
+        <h4>Superhero Secondary Ability  - {{list_hero.secondary_ability}}</h4>
+        <h4>Superhero Catch Phrase  - {{list_hero.catch_phrase}}</h4>
+               
+     </ul>
+     <a href = "{%url 'superheroes:index' %}">Return Home</a>
+    
+</body>
+</html>

@@ -55,17 +55,26 @@ def edit(request,hero_id):
         
     else:
         return render(request,'superheroes/edit.html', context)
-   
-   
-    return HttpResponseRedirect('superheroes:detail', hero_id)
+
+      
+    return render(request,'superheroes/index.html')
+    
 
 
-# def delete(request,hero_id):
-#     delete_hero = Superhero.objects.get(pk = hero_id)
-#     context ={
-#         'delete_hero':delete_hero
-#     }
-#     return render(request,'superheroes/delete.html', context)
+def delete(request,hero_id):
+   
+    list_hero = Superhero.objects.get(pk = hero_id)
+    context1 ={
+        'list_hero':list_hero
+    }
+    delete_hero = Superhero.objects.get(pk = hero_id)
+    context ={
+        'delete_hero':delete_hero
+    }
+    delete_hero.delete()
+    return HttpResponseRedirect(reverse('superheroes:index'))
+   
+    
 
 
 
