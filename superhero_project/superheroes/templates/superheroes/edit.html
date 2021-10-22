@@ -15,11 +15,11 @@
     <form action = "{%url 'superheroes:edit' hero_to_update.id %}" method ="post">
         {%csrf_token %}
 
-    Name:<input type ='text' name="name" id="name"><br />
-    Atler Ego:<input type ='text' name="alter_ego" id="alter_ego"><br />
-    Primary Ability:<input type ='text' name="primary" id="primary"><br />
-    Secondary Ability:<input type ='text' name="secondary" id="secondary"><br />
-    Catch Phrase:<input type ='text' name="catchphrase" id="catchprase"><br />
+    Name:<input type ='text' name="name" id="name" value ='{{hero_to_update.name}}'><br />
+    Atler Ego:<input type ='text' name="alter_ego" id="alter_ego" value ='{{hero_to_update.alter_ego}}'><br />
+    Primary Ability:<input type ='text' name="primary" id="primary"value ='{{hero_to_update.primary_ability}}'><br />
+    Secondary Ability:<input type ='text' name="secondary" id="secondary"value ='{{hero_to_update.secondary.ability}}'><br />
+    Catch Phrase:<input type ='text' name="catchphrase" id="catchprase"value ='{{hero_to_update.catch_phrase}}'><br />
         <input type="submit" value="CHANGE!">
 
 

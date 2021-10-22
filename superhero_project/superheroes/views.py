@@ -45,19 +45,19 @@ def edit(request,hero_id):
         update_hero = Superhero.objects.get(pk = hero_id)
         update_hero.name = request.POST.get('name')
         update_hero.alter_ego = request.POST.get('alter_ego')
-        update_hero.primary = request.POST.get('primary')
-        update_hero.secondary = request.POST.get('secondary')
+        update_hero.primary_ability = request.POST.get('primary')
+        update_hero.secondary_ability = request.POST.get('secondary')
         update_hero.catch_phrase = request.POST.get('catchphrase')
 
         
         update_hero.save()
 
-        
+        return HttpResponseRedirect(reverse('superheroes:detail', kwargs={'hero_id': hero_id}))
     else:
         return render(request,'superheroes/edit.html', context)
 
       
-    return render(request,'superheroes/index.html')
+    
     
 
 
@@ -74,7 +74,7 @@ def delete(request,hero_id):
     delete_hero.delete()
     return HttpResponseRedirect(reverse('superheroes:index'))
    
-    
+    # return render(request,'superheroes/delete.html', context1)
 
 
 

@@ -10,6 +10,7 @@ class Superhero(models.Model):
     primary_ability = models.CharField(max_length=50)
     secondary_ability = models.CharField(max_length=50)
     catch_phrase = models.CharField(max_length=50)
+    image =models.ImageField(upload_to = 'superheroes_image' ,blank =True)
 
     def __str__(self):
         return self.name
