@@ -11,8 +11,12 @@
     <h1>These are your Superheroes!!</h1>
     <ul>
         {%for hero in all_heroes %}
-        <li><h4>{{hero.name}}</h4></li>
+        <li><h4>{{hero.name}} - <a href = "{%url 'superheroes:detail' hero.id %}">View Hero Details</a></h4></li>
         {%endfor%}
         </ul>
+
+        <a href = "{%url 'superheroes:create' %}">Create New Hero</a>
+        
+        <a href = "{%url 'superheroes:create' %}">Create New Hero</a>
 </body>
 </html>

@@ -7,15 +7,17 @@
     <title>Superhero Details</title>
 </head>
 <body>
+    <a href = "{%url 'superheroes:index' %}">Home</a>
     <ul>
-        <h4> Superhero Name  -{{single_hero.name}}</h4>
-       <h4>Superhero alter ego - {{single_hero.alter_ego}}</h4>
+        <h4>Superhero Name  - {{single_hero.name}}</h4>
+        <h4>Superhero alter ego - {{single_hero.alter_ego}}</h4>
         <h4>Superhero Primary Ability  - {{single_hero.primary_ability}}</h4>
         <h4>Superhero Secondary Ability  - {{single_hero.secondary_ability}}</h4>
         <h4>Superhero Catch Phrase  - {{single_hero.catch_phrase}}</h4>
-        
-        
-        </ul>
+               
+     </ul>
+     <a href = "{%url 'superheroes:edit' single_hero.id %}">Edit Details</a>
+       
 
     
 </body>
